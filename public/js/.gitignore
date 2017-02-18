@@ -2,4 +2,5 @@
 
 !require.js
 !jquery.js
+!to-amd.js
 !amd-to-amd.js

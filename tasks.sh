@@ -18,6 +18,9 @@ case "$1" in
       rm ./test-server.pid
     fi
     ;;
+  "to-amd")
+    cp ./amd-provider/src/main.js ./public/js/amd-provider.js
+    ;;
   "amd-to-amd")
     cp ./amd-provider/src/main.js ./public/js/amd-provider.js
     cp ./amd-consumer/src/main.js ./public/js/amd-consumer.js
