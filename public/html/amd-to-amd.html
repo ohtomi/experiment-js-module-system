@@ -3,7 +3,11 @@
     <title>experiment of JavaScript module system</title>
   </head>
   <body>
+    <h3>sample for amd-to-amd</h3>
     <div>hoge fuga foo bar baz!</div>
+    <script>
+      var require = { urlArgs: 'bust=' + (new Date()).getTime() };
+    </script>
     <script data-main="/js/amd-to-amd" src="/js/require.js"></script>
   </body>
 </html>
