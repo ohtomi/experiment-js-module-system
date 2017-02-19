@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>experiment of JavaScript module system</title>
+  </head>
+  <body>
+    <div>hoge fuga foo bar baz!</div>
+    <script>
+      var require = { urlArgs: 'bust=' + (new Date()).getTime() };
+    </script>
+    <script data-main="/js/to-umd" src="/js/require.js"></script>
+  </body>
+</html>
