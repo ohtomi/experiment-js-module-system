@@ -1,7 +1,7 @@
 *.js
 
 !require.js
-!jquery.js
-!to-amd.js
-!amd-to-amd.js
-!to-umd.js
+!amd-amd-amd.js
+!amd-amd-umd.js
+!amd-umd-umd.js
+!amd/**/dep.js

@@ -18,18 +18,27 @@ case "$1" in
       rm ./test-server.pid
     fi
     ;;
-  "to-amd")
-    cp ./amd-provider/src/main.js ./public/js/amd-provider.js
+  "amd-amd-amd")
+    cp ./amd-providing-to-amd/src/main.js ./public/js/amd/providing-to-amd/
+    cp ./amd-consuming-amd/src/main.js ./public/js/amd/consuming-amd/
     ;;
-  "amd-to-amd")
-    cp ./amd-provider/src/main.js ./public/js/amd-provider.js
-    cp ./amd-consumer/src/main.js ./public/js/amd-consumer.js
-    ;;
-  "to-umd")
-    cd ./umd-provider
+  "amd-amd-umd")
+    cd ./umd-providing-to-amd
     npm run compile
     cd ..
-    cp ./umd-provider/dist/bundle.js ./public/js/umd-provider.js
+    cp ./umd-providing-to-amd/dist/bundle.js ./public/js/umd/providing-to-amd/
+    cp ./amd-consuming-umd/src/main.js ./public/js/amd/consuming-umd/
+    ;;
+  "amd-umd-umd")
+    cd ./umd-providing-to-umd
+    npm run compile
+    cd ..
+    cd ./umd-consuming-umd
+    npm install
+    npm run compile
+    cd ..
+    cp ./umd-providing-to-umd/dist/bundle.js ./public/js/umd/providing-to-umd/
+    cp ./umd-consuming-umd/dist/bundle.js ./public/js/umd/consuming-umd/
     ;;
   *)
     ;;
@@ -37,6 +46,6 @@ esac
 
 
 _tasks_sh() {
-  COMPREPLY=( $(compgen -W "start stop to-amd amd-to-amd to-umd" ${COMP_WORDS[COMP_CWORD]} ) )
+  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
 }
 complete -F _tasks_sh ./tasks.sh

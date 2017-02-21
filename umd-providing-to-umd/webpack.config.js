@@ -3,7 +3,7 @@ module.exports = {
   output: {
     path: 'dist',
     filename: 'bundle.js',
-    library: 'UmdProvider',
+    library: 'UmdProvidingToUmd',
     libraryTarget: 'umd'
   },
   module: {
@@ -12,8 +12,5 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel-loader'
     }]
-  },
-  externals: {
-    'jquery': 'jquery'
   }
 };
