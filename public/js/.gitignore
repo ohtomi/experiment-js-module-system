@@ -4,4 +4,5 @@
 !amd-amd-amd.js
 !amd-amd-umd.js
 !amd-umd-umd.js
+!amd-umd-amd.js
 !amd/**/dep.js

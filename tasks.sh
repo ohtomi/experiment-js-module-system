@@ -40,12 +40,19 @@ case "$1" in
     cp ./umd-providing-to-umd/dist/bundle.js ./public/js/umd/providing-to-umd/
     cp ./umd-consuming-umd/dist/bundle.js ./public/js/umd/consuming-umd/
     ;;
+  "amd-umd-amd")
+    cd ./umd-consuming-amd
+    npm run compile
+    cd ..
+    cp ./amd-providing-to-umd/src/main.js ./public/js/amd/providing-to-umd/
+    cp ./umd-consuming-amd/dist/bundle.js ./public/js/umd/consuming-amd/
+    ;;
   *)
     ;;
 esac
 
 
 _tasks_sh() {
-  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
+  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd" ${COMP_WORDS[COMP_CWORD]} ) )
 }
 complete -F _tasks_sh ./tasks.sh
