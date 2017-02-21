@@ -9,10 +9,13 @@
   },
   "author": "Kenichi Ohtomi",
   "license": "MIT",
+  "dependencies": {
+    "moment": "^2.17.1",
+    "umd-providing-to-umd": "../umd-providing-to-umd"
+  },
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
-    "moment": "^2.17.1",
     "webpack": "^2.2.1"
   }
 }
