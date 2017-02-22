@@ -24,6 +24,7 @@ case "$1" in
     ;;
   "amd-amd-umd")
     cd ./umd-providing-to-amd
+    npm install
     npm run compile
     cd ..
     cp ./umd-providing-to-amd/dist/bundle.js ./public/js/umd/providing-to-amd/
@@ -31,6 +32,7 @@ case "$1" in
     ;;
   "amd-umd-umd")
     cd ./umd-providing-to-umd
+    npm install
     npm run compile
     cd ..
     cd ./umd-consuming-umd
@@ -42,6 +44,7 @@ case "$1" in
     ;;
   "amd-umd-amd")
     cd ./umd-consuming-amd
+    npm install
     npm run compile
     cd ..
     cp ./amd-providing-to-umd/src/main.js ./public/js/amd/providing-to-umd/
@@ -54,12 +57,33 @@ case "$1" in
     cd ..
     cp ./umd-umd-umd/dist/bundle.js ./public/js/umd-umd-umd.js
     ;;
+  "umd-umd-amd")
+    cd ./umd-umd-amd
+    npm install
+    npm run compile
+    cd ..
+    cp ./umd-umd-amd/dist/bundle.js ./public/js/umd-umd-amd.js
+    ;;
+  "umd-amd-amd")
+    cd ./umd-amd-amd
+    npm install
+    npm run compile
+    cd ..
+    cp ./umd-amd-amd/dist/bundle.js ./public/js/umd-amd-amd.js
+    ;;
+  "umd-amd-umd")
+    cd ./umd-amd-umd
+    npm install
+    npm run compile
+    cd ..
+    cp ./umd-amd-umd/dist/bundle.js ./public/js/umd-amd-umd.js
+    ;;
   *)
     ;;
 esac
 
 
 _tasks_sh() {
-  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd umd-umd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
+  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd umd-umd-umd umd-umd-amd umd-amd-amd umd-amd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
 }
 complete -F _tasks_sh ./tasks.sh

@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: 'dist',
     filename: 'bundle.js',
-    library: 'UmdConsumingAmd',
+    library: 'UmdAmdUmd',
     libraryTarget: 'umd'
   },
   module: {
@@ -15,8 +15,12 @@ module.exports = {
       loader: 'babel-loader'
     }]
   },
-  externals: {
-    'amd-providing-to-umd': 'amd/providing-to-umd/main'
+  resolve: {
+    alias: {
+      'amd-consuming-umd': __dirname + '/../amd-consuming-umd/src/main',
+      'amd/consuming-umd/dep': __dirname + '/../public/js/amd/consuming-umd/dep',
+      'umd/providing-to-amd/bundle': __dirname + '/../public/js/umd/providing-to-amd/bundle'
+    }
   },
   plugins: [
     // Ignore all locale files of moment.js

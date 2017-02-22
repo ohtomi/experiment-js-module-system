@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -15,5 +17,9 @@ module.exports = {
   },
   externals: {
     'umd-providing-to-umd': 'umd/providing-to-umd/bundle'
-  }
+  },
+  plugins: [
+    // Ignore all locale files of moment.js
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+  ]
 };

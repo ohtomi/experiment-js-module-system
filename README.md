@@ -1,10 +1,8 @@
 # experiment-js-module-system
 
-This examples show JavaScript module system with RequireJS and webpack.
+Those examples show JavaScript module system with RequireJS and webpack.
 
-## Description
-
-### Examples:
+## Examples
 
 - amd - amd - amd
 
@@ -25,6 +23,18 @@ This examples show JavaScript module system with RequireJS and webpack.
 - umd - umd - umd
 
   Browser runs `umd` module, which calls `umd` module consuming `umd` module.
+
+- umd - umd - amd
+
+  Browser runs `umd` module, which calls `umd` module consuming `amd` module.
+
+- umd - amd - amd
+
+  Browser runs `umd` module, which calls `amd` module consuming `amd` module.
+
+- umd - amd - umd
+
+  Browser runs `umd` module, which calls `amd` module consuming `umd` module.
 
 ## Usage
 
