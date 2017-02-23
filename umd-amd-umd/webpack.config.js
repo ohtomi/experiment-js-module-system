@@ -18,7 +18,7 @@ module.exports = {
   resolve: {
     alias: {
       'amd-consuming-umd': __dirname + '/../amd-consuming-umd/src/main',
-      'amd/consuming-umd/dep': __dirname + '/../public/js/amd/consuming-umd/dep',
+      'amd/consuming-umd/dep': __dirname + '/../amd-consuming-umd/src/dep',
       'umd/providing-to-amd/bundle': __dirname + '/../public/js/umd/providing-to-amd/bundle'
     }
   },

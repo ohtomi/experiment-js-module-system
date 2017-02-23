@@ -1,6 +1,6 @@
 # experiment-js-module-system
 
-Those examples show JavaScript module system with RequireJS and webpack.
+These examples show JavaScript module system with RequireJS and webpack.
 
 ## Examples
 

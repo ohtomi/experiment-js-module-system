@@ -18,7 +18,7 @@ module.exports = {
   resolve: {
     alias: {
       'amd-providing-to-umd': __dirname + '/../amd-providing-to-umd/src/main',
-      'amd/providing-to-umd/dep': __dirname + '/../public/js/amd/providing-to-umd/dep'
+      'amd/providing-to-umd/dep': __dirname + '/../amd-providing-to-umd/src/dep'
     }
   },
   plugins: [
