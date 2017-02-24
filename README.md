@@ -4,37 +4,57 @@ These examples show JavaScript module system with RequireJS and webpack.
 
 ## Examples
 
-- amd - amd - amd
+### Loading by RequireJS
+
+- amd-amd-amd
 
   Browser runs `amd` module, which calls `amd` module consuming `amd` module.
 
-- amd - amd - umd
+- amd-amd-umd
 
   Browser runs `amd` module, which calls `amd` module consuming `umd` module.
 
-- amd - umd - umd
+- amd-umd-umd
 
   Browser runs `amd` module, which calls `umd` module consuming `umd` module.
 
-- amd - umd - amd
+- amd-umd-amd
 
   Browser runs `amd` module, which calls `umd` module consuming `amd` module.
 
-- umd - umd - umd
+- unbundled-umd-umd-umd
 
   Browser runs `umd` module, which calls `umd` module consuming `umd` module.
 
-- umd - umd - amd
+- unbundled-umd-umd-amd
 
   Browser runs `umd` module, which calls `umd` module consuming `amd` module.
 
-- umd - amd - amd
+- unbundled-umd-amd-amd
 
   Browser runs `umd` module, which calls `amd` module consuming `amd` module.
 
-- umd - amd - umd
+- unbundled-umd-amd-umd
 
   Browser runs `umd` module, which calls `amd` module consuming `umd` module.
+
+### Bundled by webpack
+
+- bundled-umd-umd-umd
+
+  Browser runs `umd` module, which was bundled with `umd` module consuming `umd` module.
+
+- bundled-umd-umd-amd
+
+  Browser runs `umd` module, which was bundled with `umd` module consuming `amd` module.
+
+- bundled-umd-amd-amd
+
+  Browser runs `umd` module, which was bundled with `amd` module consuming `amd` module.
+
+- bundled-umd-amd-umd
+
+  Browser runs `umd` module, which was bundled with `amd` module consuming `umd` module.
 
 ## Usage
 
@@ -46,7 +66,8 @@ $ ./tasks.sh stop
 stopping test server [18865]
 
 $ ./tasks.sh amd-amd-amd
-$ ./tasks.sh umd-umd-umd
+$ ./tasks.sh unbundled-umd-umd-umd
+$ ./tasks.sh bundled-umd-umd-umd
 ```
 
 ## Contribution
