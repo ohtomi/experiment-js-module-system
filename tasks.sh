@@ -1,5 +1,54 @@
 #!/bin/bash
 
+amd-consuming-amd() {
+  cp ./amd-consuming-amd/src/*.js ./public/js/amd/consuming-amd/
+}
+
+amd-consuming-umd() {
+  cp ./amd-consuming-umd/src/*.js ./public/js/amd/consuming-umd/
+}
+
+amd-providing-to-amd() {
+  cp ./amd-providing-to-amd/src/*.js ./public/js/amd/providing-to-amd/
+}
+
+amd-providing-to-umd() {
+  cp ./amd-providing-to-umd/src/*.js ./public/js/amd/providing-to-umd/
+}
+
+umd-consuming-amd() {
+  cd ./umd-consuming-amd
+  npm install
+  npm run compile
+  cd ..
+  cp ./umd-consuming-amd/dist/bundle.js ./public/js/umd/consuming-amd/
+}
+
+umd-consuming-umd() {
+  cd ./umd-consuming-umd
+  npm install
+  npm run compile
+  cd ..
+  cp ./umd-consuming-umd/dist/bundle.js ./public/js/umd/consuming-umd/
+}
+
+umd-providing-to-amd() {
+  cd ./umd-providing-to-amd
+  npm install
+  npm run compile
+  cd ..
+  cp ./umd-providing-to-amd/dist/bundle.js ./public/js/umd/providing-to-amd/
+}
+
+umd-providing-to-umd() {
+  cd ./umd-providing-to-umd
+  npm install
+  npm run compile
+  cd ..
+  cp ./umd-providing-to-umd/dist/bundle.js ./public/js/umd/providing-to-umd/
+}
+
+
 case "$1" in
   "start")
     cd ./public
@@ -21,39 +70,23 @@ case "$1" in
     ;;
 
   "aaa" | "amd-amd-amd")
-    cp ./amd-providing-to-amd/src/*.js ./public/js/amd/providing-to-amd/
-    cp ./amd-consuming-amd/src/*.js ./public/js/amd/consuming-amd/
+    amd-providing-to-amd
+    amd-consuming-amd
     ;;
 
   "aau" | "amd-amd-umd")
-    cd ./umd-providing-to-amd
-    npm install
-    npm run compile
-    cd ..
-    cp ./umd-providing-to-amd/dist/bundle.js ./public/js/umd/providing-to-amd/
-    cp ./amd-consuming-umd/src/*.js ./public/js/amd/consuming-umd/
+    umd-providing-to-amd
+    amd-consuming-umd
     ;;
 
   "auu" | "amd-umd-umd")
-    cd ./umd-providing-to-umd
-    npm install
-    npm run compile
-    cd ..
-    cd ./umd-consuming-umd
-    npm install
-    npm run compile
-    cd ..
-    cp ./umd-providing-to-umd/dist/bundle.js ./public/js/umd/providing-to-umd/
-    cp ./umd-consuming-umd/dist/bundle.js ./public/js/umd/consuming-umd/
+    umd-providing-to-umd
+    umd-consuming-umd
     ;;
 
   "aua" | "amd-umd-amd")
-    cd ./umd-consuming-amd
-    npm install
-    npm run compile
-    cd ..
-    cp ./amd-providing-to-umd/src/*.js ./public/js/amd/providing-to-umd/
-    cp ./umd-consuming-amd/dist/bundle.js ./public/js/umd/consuming-amd/
+    amd-providing-to-umd
+    umd-consuming-amd
     ;;
 
   "buuu" | "umd-umd-umd")
