@@ -7,6 +7,7 @@ case "$1" in
     echo "$!" >./test-server.pid
     echo "start test server [$!]"
     ;;
+
   "stop")
     cd ./public
     if [ -f ./test-server.pid ]; then
@@ -18,11 +19,13 @@ case "$1" in
       rm ./test-server.pid
     fi
     ;;
-  "amd-amd-amd")
+
+  "aaa" | "amd-amd-amd")
     cp ./amd-providing-to-amd/src/*.js ./public/js/amd/providing-to-amd/
     cp ./amd-consuming-amd/src/*.js ./public/js/amd/consuming-amd/
     ;;
-  "amd-amd-umd")
+
+  "aau" | "amd-amd-umd")
     cd ./umd-providing-to-amd
     npm install
     npm run compile
@@ -30,7 +33,8 @@ case "$1" in
     cp ./umd-providing-to-amd/dist/bundle.js ./public/js/umd/providing-to-amd/
     cp ./amd-consuming-umd/src/*.js ./public/js/amd/consuming-umd/
     ;;
-  "amd-umd-umd")
+
+  "auu" | "amd-umd-umd")
     cd ./umd-providing-to-umd
     npm install
     npm run compile
@@ -42,7 +46,8 @@ case "$1" in
     cp ./umd-providing-to-umd/dist/bundle.js ./public/js/umd/providing-to-umd/
     cp ./umd-consuming-umd/dist/bundle.js ./public/js/umd/consuming-umd/
     ;;
-  "amd-umd-amd")
+
+  "aua" | "amd-umd-amd")
     cd ./umd-consuming-amd
     npm install
     npm run compile
@@ -50,28 +55,32 @@ case "$1" in
     cp ./amd-providing-to-umd/src/*.js ./public/js/amd/providing-to-umd/
     cp ./umd-consuming-amd/dist/bundle.js ./public/js/umd/consuming-amd/
     ;;
-  "umd-umd-umd")
+
+  "buuu" | "umd-umd-umd")
     cd ./umd-umd-umd
     npm install
     npm run compile
     cd ..
     cp ./umd-umd-umd/dist/bundle.js ./public/js/umd-umd-umd.js
     ;;
-  "umd-umd-amd")
+
+  "buua" | "umd-umd-amd")
     cd ./umd-umd-amd
     npm install
     npm run compile
     cd ..
     cp ./umd-umd-amd/dist/bundle.js ./public/js/umd-umd-amd.js
     ;;
-  "umd-amd-amd")
+
+  "buaa" | "umd-amd-amd")
     cd ./umd-amd-amd
     npm install
     npm run compile
     cd ..
     cp ./umd-amd-amd/dist/bundle.js ./public/js/umd-amd-amd.js
     ;;
-  "umd-amd-umd")
+
+  "buau" | "umd-amd-umd")
     cd ./umd-amd-umd
     npm install
     npm run compile
