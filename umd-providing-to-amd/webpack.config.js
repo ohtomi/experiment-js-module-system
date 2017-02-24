@@ -5,8 +5,9 @@ module.exports = {
   output: {
     path: 'dist',
     filename: 'bundle.js',
-    library: 'UmdProvidingToAmd',
-    libraryTarget: 'umd'
+    library: 'umd/providing-to-amd/bundle',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     loaders: [{

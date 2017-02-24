@@ -5,8 +5,9 @@ module.exports = {
   output: {
     path: 'dist',
     filename: 'bundle.js',
-    library: 'UmdConsumingUmd',
-    libraryTarget: 'umd'
+    library: 'umd/consuming-umd/bundle',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     loaders: [{
