@@ -96,11 +96,11 @@ case "$1" in
     npm install --save ../umd-providing-to-umd
     cd ..
 
-    cd ./umd-umd-umd
+    cd ./bootstrap-in-umd/bundled-umd-umd-umd
     npm install
     npm run compile
-    cd ..
-    cp ./umd-umd-umd/dist/bundle.js ./public/js/umd-umd-umd.js
+    cd ../..
+    cp ./bootstrap-in-umd/bundled-umd-umd-umd/dist/bundle.js ./public/js/bundled-umd-umd-umd.js
 
     # Strip the dependency from 'umd-consuming-umd' project's package.json.
     cd ./umd-consuming-umd
@@ -110,27 +110,27 @@ case "$1" in
     ;;
 
   "buua" | "bundled-umd-umd-amd")
-    cd ./umd-umd-amd
+    cd ./bootstrap-in-umd/bundled-umd-umd-amd
     npm install
     npm run compile
-    cd ..
-    cp ./umd-umd-amd/dist/bundle.js ./public/js/umd-umd-amd.js
+    cd ../..
+    cp ./bootstrap-in-umd/bundled-umd-umd-amd/dist/bundle.js ./public/js/bundled-umd-umd-amd.js
     ;;
 
   "buaa" | "bundled-umd-amd-amd")
-    cd ./umd-amd-amd
+    cd ./bootstrap-in-umd/bundled-umd-amd-amd
     npm install
     npm run compile
-    cd ..
-    cp ./umd-amd-amd/dist/bundle.js ./public/js/umd-amd-amd.js
+    cd ../..
+    cp ./bootstrap-in-umd/bundled-umd-amd-amd/dist/bundle.js ./public/js/bundled-umd-amd-amd.js
     ;;
 
   "buau" | "bundled-umd-amd-umd")
-    cd ./umd-amd-umd
+    cd ./bootstrap-in-umd/bundled-umd-amd-umd
     npm install
     npm run compile
-    cd ..
-    cp ./umd-amd-umd/dist/bundle.js ./public/js/umd-amd-umd.js
+    cd ../..
+    cp ./bootstrap-in-umd/bundled-umd-amd-umd/dist/bundle.js ./public/js/bundled-umd-amd-umd.js
     ;;
 
   "uuuu" | "unbundled-umd-umd-umd")

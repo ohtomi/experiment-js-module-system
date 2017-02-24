@@ -10,7 +10,7 @@
   "author": "Kenichi Ohtomi",
   "license": "MIT",
   "dependencies": {
-    "umd-consuming-amd": "../umd-consuming-amd"
+    "umd-consuming-amd": "../../umd-consuming-amd"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

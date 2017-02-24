@@ -1,5 +1,5 @@
 {
-  "name": "umd-umd-umd",
+  "name": "umd-umd-amd",
   "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
@@ -10,7 +10,7 @@
   "author": "Kenichi Ohtomi",
   "license": "MIT",
   "dependencies": {
-    "umd-consuming-umd": "../umd-consuming-umd"
+    "umd-providing-to-amd": "../../umd-providing-to-amd"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
