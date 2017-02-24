@@ -1,6 +1,6 @@
 console.log('\t\t\t>> amd-providing-to-amd dep');
 
-define([], function() {
+define('amd/providing-to-amd/dep', [], function() {
   return function(message) {
     return '<apa-dep>' + message + '</apa-dep>'
   }

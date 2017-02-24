@@ -1,6 +1,6 @@
 console.log('\t\t\t>> amd-consuming-umd dep');
 
-define([], function() {
+define('amd/consuming-umd/dep', [], function() {
   return function(message) {
     return '<acu-dep>' + message + '</acu-dep>'
   }
