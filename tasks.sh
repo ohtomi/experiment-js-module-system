@@ -89,7 +89,7 @@ case "$1" in
     umd-consuming-amd
     ;;
 
-  "buuu" | "umd-umd-umd")
+  "buuu" | "bundled-umd-umd-umd")
     # To install 'umd-providing-to-umd' to 'umd-umd-umd' project,
     # add the dependency to 'umd-consuming-umd' project's package.json.
     cd ./umd-consuming-umd
@@ -109,7 +109,7 @@ case "$1" in
     cd ..
     ;;
 
-  "buua" | "umd-umd-amd")
+  "buua" | "bundled-umd-umd-amd")
     cd ./umd-umd-amd
     npm install
     npm run compile
@@ -117,7 +117,7 @@ case "$1" in
     cp ./umd-umd-amd/dist/bundle.js ./public/js/umd-umd-amd.js
     ;;
 
-  "buaa" | "umd-amd-amd")
+  "buaa" | "bundled-umd-amd-amd")
     cd ./umd-amd-amd
     npm install
     npm run compile
@@ -125,19 +125,60 @@ case "$1" in
     cp ./umd-amd-amd/dist/bundle.js ./public/js/umd-amd-amd.js
     ;;
 
-  "buau" | "umd-amd-umd")
+  "buau" | "bundled-umd-amd-umd")
     cd ./umd-amd-umd
     npm install
     npm run compile
     cd ..
     cp ./umd-amd-umd/dist/bundle.js ./public/js/umd-amd-umd.js
     ;;
+
+  "uuuu" | "unbundled-umd-umd-umd")
+    umd-providing-to-umd
+    umd-consuming-umd
+    cd ./bootstrap-in-umd/unbundled-umd-umd-umd
+    npm install
+    npm run compile
+    cd ../..
+    cp ./bootstrap-in-umd/unbundled-umd-umd-umd/dist/bundle.js ./public/js/unbundled-umd-umd-umd.js
+    ;;
+
+  "uuua" | "unbundled-umd-umd-amd")
+    amd-providing-to-umd
+    umd-consuming-amd
+    cd ./bootstrap-in-umd/unbundled-umd-umd-amd
+    npm install
+    npm run compile
+    cd ../..
+    cp ./bootstrap-in-umd/unbundled-umd-umd-amd/dist/bundle.js ./public/js/unbundled-umd-umd-amd.js
+    ;;
+
+  "uuaa" | "unbundled-umd-amd-amd")
+    amd-providing-to-amd
+    amd-consuming-amd
+    cd ./bootstrap-in-umd/unbundled-umd-amd-amd
+    npm install
+    npm run compile
+    cd ../..
+    cp ./bootstrap-in-umd/unbundled-umd-amd-amd/dist/bundle.js ./public/js/unbundled-umd-amd-amd.js
+    ;;
+
+  "uuau" | "unbundled-umd-amd-umd")
+    umd-providing-to-amd
+    amd-consuming-umd
+    cd ./bootstrap-in-umd/unbundled-umd-amd-umd
+    npm install
+    npm run compile
+    cd ../..
+    cp ./bootstrap-in-umd/unbundled-umd-amd-umd/dist/bundle.js ./public/js/unbundled-umd-amd-umd.js
+    ;;
+
   *)
     ;;
 esac
 
 
 _tasks_sh() {
-  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd umd-umd-umd umd-umd-amd umd-amd-amd umd-amd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
+  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd bundled-umd-umd-umd bundled-umd-umd-amd bundled-umd-amd-amd bundled-umd-amd-umd unbundled-umd-umd-umd unbundled-umd-umd-amd unbundled-umd-amd-amd unbundled-umd-amd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
 }
 complete -F _tasks_sh ./tasks.sh

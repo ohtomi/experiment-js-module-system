@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>experiment of JavaScript module system</title>
+  </head>
+  <body>
+    <h3>sample for umd-amd-umd</h3>
+    <script>
+      var require = { baseUrl: '/js', urlArgs: 'bust=' + (new Date()).getTime() };
+    </script>
+    <script src="/js/require.js"></script>
+    <script>
+      require(['unbundled-umd-amd-umd'], function(umd) {
+        umd.default();
+      })
+    </script>
+  </body>
+</html>

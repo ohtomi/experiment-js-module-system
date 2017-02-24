@@ -1,0 +1,17 @@
+{
+  "name": "umd-umd-amd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "compile": "webpack --progress --profile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kenichi Ohtomi",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "webpack": "^2.2.1"
+  }
+}
