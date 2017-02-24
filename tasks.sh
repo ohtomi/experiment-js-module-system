@@ -90,11 +90,23 @@ case "$1" in
     ;;
 
   "buuu" | "umd-umd-umd")
+    # To install 'umd-providing-to-umd' to 'umd-umd-umd' project,
+    # add the dependency to 'umd-consuming-umd' project's package.json.
+    cd ./umd-consuming-umd
+    npm install --save ../umd-providing-to-umd
+    cd ..
+
     cd ./umd-umd-umd
     npm install
     npm run compile
     cd ..
     cp ./umd-umd-umd/dist/bundle.js ./public/js/umd-umd-umd.js
+
+    # Strip the dependency from 'umd-consuming-umd' project's package.json.
+    cd ./umd-consuming-umd
+    npm uninstall --save umd-providing-to-umd
+    npm prune
+    cd ..
     ;;
 
   "buua" | "umd-umd-amd")

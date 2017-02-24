@@ -10,8 +10,7 @@
   "author": "Kenichi Ohtomi",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.17.1",
-    "umd-providing-to-umd": "../umd-providing-to-umd"
+    "moment": "^2.17.1"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
