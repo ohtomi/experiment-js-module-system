@@ -5,6 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "compile": "webpack --progress --profile",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kenichi Ohtomi",
@@ -15,6 +16,8 @@
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "flow-bin": "^0.40.0",
     "webpack": "^2.2.1"
   }
 }
