@@ -1,3 +1,3 @@
 declare module "umd-providing-to-umd" {
-  declare function exports(message: string): void;
+  declare function exports(message: string): string;
 }
