@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "webpack --progress --profile",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "flow:link": "ln -fs ../../umd-providing-to-umd umd_modules/umd-providing-to-umd",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kenichi Ohtomi",
