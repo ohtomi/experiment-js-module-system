@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "webpack --progress --profile",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "lint": "eslint src/",
     "server": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,8 +17,11 @@
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "eslint": "^3.16.1",
+    "eslint-plugin-flowtype": "^2.30.0",
     "flow-bin": "^0.40.0",
     "flow-typed": "^2.0.0",
     "webpack": "^2.2.1",
