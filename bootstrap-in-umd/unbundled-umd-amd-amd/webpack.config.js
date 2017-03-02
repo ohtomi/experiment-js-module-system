@@ -1,10 +1,13 @@
+const path = require('path');
+
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: 'dist',
-    filename: 'bundle.js',
+    path: path.resolve(__dirname + '/dist'),
+    filename: 'unbundled-umd-amd-amd.js',
     library: 'unbundled-umd-amd-amd',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     loaders: [{
@@ -15,5 +18,10 @@ module.exports = {
   },
   externals: {
     'amd-consuming-amd': 'amd/consuming-amd/main'
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname + '/../../public'),
+    publicPath: '/js/',
+    watchContentBase: true
   }
 };

@@ -1,10 +1,13 @@
+const path = require('path');
+
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: 'dist',
-    filename: 'bundle.js',
+    path: path.resolve(__dirname + '/dist'),
+    filename: 'bundled-umd-amd-amd.js',
     library: 'UmdAmdAmd',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     loaders: [{
@@ -20,5 +23,10 @@ module.exports = {
       'amd/providing-to-amd/main': __dirname + '/../../amd-providing-to-amd/src/main',
       'amd/providing-to-amd/dep': __dirname + '/../../amd-providing-to-amd/src/dep'
     }
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname + '/../../public'),
+    publicPath: '/js/',
+    watchContentBase: true
   }
 };

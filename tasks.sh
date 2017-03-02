@@ -21,7 +21,7 @@ umd-consuming-amd() {
   npm install
   npm run compile
   cd ..
-  cp ./umd-consuming-amd/dist/bundle.js ./public/js/umd/consuming-amd/
+  cp ./umd-consuming-amd/dist/*.js ./public/js/umd/consuming-amd/
 }
 
 umd-consuming-umd() {
@@ -29,7 +29,7 @@ umd-consuming-umd() {
   npm install
   npm run compile
   cd ..
-  cp ./umd-consuming-umd/dist/bundle.js ./public/js/umd/consuming-umd/
+  cp ./umd-consuming-umd/dist/*.js ./public/js/umd/consuming-umd/
 }
 
 umd-providing-to-amd() {
@@ -37,7 +37,7 @@ umd-providing-to-amd() {
   npm install
   npm run compile
   cd ..
-  cp ./umd-providing-to-amd/dist/bundle.js ./public/js/umd/providing-to-amd/
+  cp ./umd-providing-to-amd/dist/*.js ./public/js/umd/providing-to-amd/
 }
 
 umd-providing-to-umd() {
@@ -45,7 +45,7 @@ umd-providing-to-umd() {
   npm install
   npm run compile
   cd ..
-  cp ./umd-providing-to-umd/dist/bundle.js ./public/js/umd/providing-to-umd/
+  cp ./umd-providing-to-umd/dist/*.js ./public/js/umd/providing-to-umd/
 }
 
 
@@ -100,7 +100,7 @@ case "$1" in
     npm install
     npm run compile
     cd ../..
-    cp ./bootstrap-in-umd/bundled-umd-umd-umd/dist/bundle.js ./public/js/bundled-umd-umd-umd.js
+    cp ./bootstrap-in-umd/bundled-umd-umd-umd/dist/*.js ./public/js/
 
     # Strip the dependency from 'umd-consuming-umd' project's package.json.
     cd ./umd-consuming-umd
@@ -114,7 +114,7 @@ case "$1" in
     npm install
     npm run compile
     cd ../..
-    cp ./bootstrap-in-umd/bundled-umd-umd-amd/dist/bundle.js ./public/js/bundled-umd-umd-amd.js
+    cp ./bootstrap-in-umd/bundled-umd-umd-amd/dist/*.js ./public/js/
     ;;
 
   "buaa" | "bundled-umd-amd-amd")
@@ -122,7 +122,7 @@ case "$1" in
     npm install
     npm run compile
     cd ../..
-    cp ./bootstrap-in-umd/bundled-umd-amd-amd/dist/bundle.js ./public/js/bundled-umd-amd-amd.js
+    cp ./bootstrap-in-umd/bundled-umd-amd-amd/dist/*.js ./public/js/
     ;;
 
   "buau" | "bundled-umd-amd-umd")
@@ -130,7 +130,7 @@ case "$1" in
     npm install
     npm run compile
     cd ../..
-    cp ./bootstrap-in-umd/bundled-umd-amd-umd/dist/bundle.js ./public/js/bundled-umd-amd-umd.js
+    cp ./bootstrap-in-umd/bundled-umd-amd-umd/dist/*.js ./public/js/
     ;;
 
   "uuuu" | "unbundled-umd-umd-umd")
@@ -140,7 +140,7 @@ case "$1" in
     npm install
     npm run compile
     cd ../..
-    cp ./bootstrap-in-umd/unbundled-umd-umd-umd/dist/bundle.js ./public/js/unbundled-umd-umd-umd.js
+    cp ./bootstrap-in-umd/unbundled-umd-umd-umd/dist/*.js ./public/js/
     ;;
 
   "uuua" | "unbundled-umd-umd-amd")
@@ -150,7 +150,7 @@ case "$1" in
     npm install
     npm run compile
     cd ../..
-    cp ./bootstrap-in-umd/unbundled-umd-umd-amd/dist/bundle.js ./public/js/unbundled-umd-umd-amd.js
+    cp ./bootstrap-in-umd/unbundled-umd-umd-amd/dist/*.js ./public/js/
     ;;
 
   "uuaa" | "unbundled-umd-amd-amd")
@@ -160,7 +160,7 @@ case "$1" in
     npm install
     npm run compile
     cd ../..
-    cp ./bootstrap-in-umd/unbundled-umd-amd-amd/dist/bundle.js ./public/js/unbundled-umd-amd-amd.js
+    cp ./bootstrap-in-umd/unbundled-umd-amd-amd/dist/*.js ./public/js/
     ;;
 
   "uuau" | "unbundled-umd-amd-umd")
@@ -170,7 +170,7 @@ case "$1" in
     npm install
     npm run compile
     cd ../..
-    cp ./bootstrap-in-umd/unbundled-umd-amd-umd/dist/bundle.js ./public/js/unbundled-umd-amd-umd.js
+    cp ./bootstrap-in-umd/unbundled-umd-amd-umd/dist/*.js ./public/js/
     ;;
 
   *)

@@ -1,12 +1,14 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: 'dist',
-    filename: 'bundle.js',
+    path: path.resolve(__dirname + '/dist'),
+    filename: 'bundled-umd-amd-umd.js',
     library: 'UmdAmdUmd',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     loaders: [{
@@ -21,6 +23,11 @@ module.exports = {
       'amd/consuming-umd/dep': __dirname + '/../../amd-consuming-umd/src/dep',
       'umd/providing-to-amd/bundle': __dirname + '/../../public/js/umd/providing-to-amd/bundle'
     }
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname + '/../../public'),
+    publicPath: '/js/',
+    watchContentBase: true
   },
   plugins: [
     // Ignore all locale files of moment.js
