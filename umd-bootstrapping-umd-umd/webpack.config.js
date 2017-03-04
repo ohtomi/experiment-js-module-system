@@ -4,8 +4,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname + '/dist'),
-    filename: 'unbundled-umd-umd-umd.js',
-    library: 'unbundled-umd-umd-umd',
+    filename: 'bundle.js',
+    library: 'umd/bootstrapping-umd-umd/bundle',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

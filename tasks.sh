@@ -18,7 +18,6 @@ amd-providing-to-umd() {
 
 umd-consuming-amd() {
   cd ./umd-consuming-amd
-  npm install
   npm run compile
   cd ..
   cp ./umd-consuming-amd/dist/*.js ./public/js/umd/consuming-amd/
@@ -26,7 +25,6 @@ umd-consuming-amd() {
 
 umd-consuming-umd() {
   cd ./umd-consuming-umd
-  npm install
   npm run compile
   cd ..
   cp ./umd-consuming-umd/dist/*.js ./public/js/umd/consuming-umd/
@@ -34,7 +32,6 @@ umd-consuming-umd() {
 
 umd-providing-to-amd() {
   cd ./umd-providing-to-amd
-  npm install
   npm run compile
   cd ..
   cp ./umd-providing-to-amd/dist/*.js ./public/js/umd/providing-to-amd/
@@ -42,7 +39,6 @@ umd-providing-to-amd() {
 
 umd-providing-to-umd() {
   cd ./umd-providing-to-umd
-  npm install
   npm run compile
   cd ..
   cp ./umd-providing-to-umd/dist/*.js ./public/js/umd/providing-to-umd/
@@ -89,88 +85,40 @@ case "$1" in
     umd-consuming-amd
     ;;
 
-  "buuu" | "bundled-umd-umd-umd")
-    # To install 'umd-providing-to-umd' to 'umd-umd-umd' project,
-    # add the dependency to 'umd-consuming-umd' project's package.json.
-    cd ./umd-consuming-umd
-    npm install --save ../umd-providing-to-umd
-    cd ..
-
-    cd ./bootstrap-in-umd/bundled-umd-umd-umd
-    npm install
-    npm run compile
-    cd ../..
-    cp ./bootstrap-in-umd/bundled-umd-umd-umd/dist/*.js ./public/js/
-
-    # Strip the dependency from 'umd-consuming-umd' project's package.json.
-    cd ./umd-consuming-umd
-    npm uninstall --save umd-providing-to-umd
-    npm prune
-    cd ..
-    ;;
-
-  "buua" | "bundled-umd-umd-amd")
-    cd ./bootstrap-in-umd/bundled-umd-umd-amd
-    npm install
-    npm run compile
-    cd ../..
-    cp ./bootstrap-in-umd/bundled-umd-umd-amd/dist/*.js ./public/js/
-    ;;
-
-  "buaa" | "bundled-umd-amd-amd")
-    cd ./bootstrap-in-umd/bundled-umd-amd-amd
-    npm install
-    npm run compile
-    cd ../..
-    cp ./bootstrap-in-umd/bundled-umd-amd-amd/dist/*.js ./public/js/
-    ;;
-
-  "buau" | "bundled-umd-amd-umd")
-    cd ./bootstrap-in-umd/bundled-umd-amd-umd
-    npm install
-    npm run compile
-    cd ../..
-    cp ./bootstrap-in-umd/bundled-umd-amd-umd/dist/*.js ./public/js/
-    ;;
-
-  "uuuu" | "unbundled-umd-umd-umd")
+  "uuu" | "umd-umd-umd")
     umd-providing-to-umd
     umd-consuming-umd
-    cd ./bootstrap-in-umd/unbundled-umd-umd-umd
-    npm install
+    cd ./umd-bootstrapping-umd-umd
     npm run compile
-    cd ../..
-    cp ./bootstrap-in-umd/unbundled-umd-umd-umd/dist/*.js ./public/js/
+    cd ..
+    cp ./umd-bootstrapping-umd-umd/dist/*.js ./public/js/umd/bootstrapping-umd-umd/
     ;;
 
-  "uuua" | "unbundled-umd-umd-amd")
+  "uua" | "umd-umd-amd")
     amd-providing-to-umd
     umd-consuming-amd
-    cd ./bootstrap-in-umd/unbundled-umd-umd-amd
-    npm install
+    cd ./umd-bootstrapping-umd-amd
     npm run compile
-    cd ../..
-    cp ./bootstrap-in-umd/unbundled-umd-umd-amd/dist/*.js ./public/js/
+    cd ..
+    cp ./umd-bootstrapping-umd-amd/dist/*.js ./public/js/umd/bootstrapping-umd-amd/
     ;;
 
-  "uuaa" | "unbundled-umd-amd-amd")
+  "uaa" | "umd-amd-amd")
     amd-providing-to-amd
     amd-consuming-amd
-    cd ./bootstrap-in-umd/unbundled-umd-amd-amd
-    npm install
+    cd ./umd-bootstrapping-amd-amd
     npm run compile
-    cd ../..
-    cp ./bootstrap-in-umd/unbundled-umd-amd-amd/dist/*.js ./public/js/
+    cd ..
+    cp ./umd-bootstrapping-amd-amd/dist/*.js ./public/js/umd/bootstrapping-amd-amd/
     ;;
 
-  "uuau" | "unbundled-umd-amd-umd")
+  "uau" | "umd-amd-umd")
     umd-providing-to-amd
     amd-consuming-umd
-    cd ./bootstrap-in-umd/unbundled-umd-amd-umd
-    npm install
+    cd ./umd-bootstrapping-amd-umd
     npm run compile
-    cd ../..
-    cp ./bootstrap-in-umd/unbundled-umd-amd-umd/dist/*.js ./public/js/
+    cd ..
+    cp ./umd-bootstrapping-amd-umd/dist/*.js ./public/js/umd/bootstrapping-amd-umd/
     ;;
 
   *)
@@ -179,6 +127,6 @@ esac
 
 
 _tasks_sh() {
-  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd bundled-umd-umd-umd bundled-umd-umd-amd bundled-umd-amd-amd bundled-umd-amd-umd unbundled-umd-umd-umd unbundled-umd-umd-amd unbundled-umd-amd-amd unbundled-umd-amd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
+  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd umd-umd-umd umd-umd-amd umd-amd-amd umd-amd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
 }
 complete -F _tasks_sh ./tasks.sh

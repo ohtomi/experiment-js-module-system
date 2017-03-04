@@ -4,8 +4,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname + '/dist'),
-    filename: 'unbundled-umd-umd-amd.js',
-    library: 'unbundled-umd-umd-amd',
+    filename: 'bundle.js',
+    library: 'umd/bootstrapping-amd-umd/bundle',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -17,7 +17,7 @@ module.exports = {
     }]
   },
   externals: {
-    'umd-consuming-amd': 'umd/consuming-amd/bundle'
+    'amd-consuming-umd': 'amd/consuming-umd/main'
   },
   devServer: {
     contentBase: path.resolve(__dirname + '/../../public'),
