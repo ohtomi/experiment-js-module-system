@@ -1,5 +1,21 @@
 #!/bin/bash
 
+amd-bootstrapping-amd-amd() {
+  cp ./amd-bootstrapping-amd-amd/src/*.js ./public/js/amd/bootstrapping-amd-amd/
+}
+
+amd-bootstrapping-amd-umd() {
+  cp ./amd-bootstrapping-amd-umd/src/*.js ./public/js/amd/bootstrapping-amd-umd/
+}
+
+amd-bootstrapping-umd-amd() {
+  cp ./amd-bootstrapping-umd-amd/src/*.js ./public/js/amd/bootstrapping-umd-amd/
+}
+
+amd-bootstrapping-umd-umd() {
+  cp ./amd-bootstrapping-umd-umd/src/*.js ./public/js/amd/bootstrapping-umd-umd/
+}
+
 amd-consuming-amd() {
   cp ./amd-consuming-amd/src/*.js ./public/js/amd/consuming-amd/
 }
@@ -68,21 +84,25 @@ case "$1" in
   "aaa" | "amd-amd-amd")
     amd-providing-to-amd
     amd-consuming-amd
+    amd-bootstrapping-amd-amd
     ;;
 
   "aau" | "amd-amd-umd")
     umd-providing-to-amd
     amd-consuming-umd
+    amd-bootstrapping-amd-umd
     ;;
 
   "auu" | "amd-umd-umd")
     umd-providing-to-umd
     umd-consuming-umd
+    amd-bootstrapping-umd-umd
     ;;
 
   "aua" | "amd-umd-amd")
     amd-providing-to-umd
     umd-consuming-amd
+    amd-bootstrapping-umd-amd
     ;;
 
   "uuu" | "umd-umd-umd")

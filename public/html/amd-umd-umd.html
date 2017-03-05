@@ -5,8 +5,13 @@
   <body>
     <h3>sample for amd-umd-umd</h3>
     <script>
-      var require = { urlArgs: 'bust=' + (new Date()).getTime() };
+      var require = { baseUrl: '/js', urlArgs: 'bust=' + (new Date()).getTime() };
     </script>
-    <script data-main="/js/amd-umd-umd" src="/js/require.js"></script>
+    <script src="/js/require.js"></script>
+    <script>
+      require(['amd/bootstrapping-umd-umd/main'], function(amd) {
+        amd();
+      })
+    </script>
   </body>
 </html>
