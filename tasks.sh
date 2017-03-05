@@ -32,6 +32,35 @@ amd-providing-to-umd() {
   cp ./amd-providing-to-umd/src/*.js ./public/js/amd/providing-to-umd/
 }
 
+
+umd-bootstrapping-amd-amd() {
+  cd ./umd-bootstrapping-amd-amd
+  npm run compile
+  cd ..
+  cp ./umd-bootstrapping-amd-amd/dist/*.js ./public/js/umd/bootstrapping-amd-amd/
+}
+
+umd-bootstrapping-amd-umd() {
+  cd ./umd-bootstrapping-amd-umd
+  npm run compile
+  cd ..
+  cp ./umd-bootstrapping-amd-umd/dist/*.js ./public/js/umd/bootstrapping-amd-umd/
+}
+
+umd-bootstrapping-umd-amd() {
+  cd ./umd-bootstrapping-umd-amd
+  npm run compile
+  cd ..
+  cp ./umd-bootstrapping-umd-amd/dist/*.js ./public/js/umd/bootstrapping-umd-amd/
+}
+
+umd-bootstrapping-umd-umd() {
+  cd ./umd-bootstrapping-umd-umd
+  npm run compile
+  cd ..
+  cp ./umd-bootstrapping-umd-umd/dist/*.js ./public/js/umd/bootstrapping-umd-umd/
+}
+
 umd-consuming-amd() {
   cd ./umd-consuming-amd
   npm run compile
@@ -108,37 +137,25 @@ case "$1" in
   "uuu" | "umd-umd-umd")
     umd-providing-to-umd
     umd-consuming-umd
-    cd ./umd-bootstrapping-umd-umd
-    npm run compile
-    cd ..
-    cp ./umd-bootstrapping-umd-umd/dist/*.js ./public/js/umd/bootstrapping-umd-umd/
+    umd-bootstrapping-umd-umd
     ;;
 
   "uua" | "umd-umd-amd")
     amd-providing-to-umd
     umd-consuming-amd
-    cd ./umd-bootstrapping-umd-amd
-    npm run compile
-    cd ..
-    cp ./umd-bootstrapping-umd-amd/dist/*.js ./public/js/umd/bootstrapping-umd-amd/
+    umd-bootstrapping-umd-amd
     ;;
 
   "uaa" | "umd-amd-amd")
     amd-providing-to-amd
     amd-consuming-amd
-    cd ./umd-bootstrapping-amd-amd
-    npm run compile
-    cd ..
-    cp ./umd-bootstrapping-amd-amd/dist/*.js ./public/js/umd/bootstrapping-amd-amd/
+    umd-bootstrapping-amd-amd
     ;;
 
   "uau" | "umd-amd-umd")
     umd-providing-to-amd
     amd-consuming-umd
-    cd ./umd-bootstrapping-amd-umd
-    npm run compile
-    cd ..
-    cp ./umd-bootstrapping-amd-umd/dist/*.js ./public/js/umd/bootstrapping-amd-umd/
+    umd-bootstrapping-amd-umd
     ;;
 
   *)
