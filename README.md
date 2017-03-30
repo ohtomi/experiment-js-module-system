@@ -4,70 +4,40 @@ These examples show JavaScript module system with RequireJS and webpack.
 
 ## Examples
 
-### Loading by RequireJS
+Each example consists of three JavaScript modules.
+A bootstrap module, an UI module and a business logic module.
 
 - amd-amd-amd
-
-  Browser runs `amd` module, which calls `amd` module consuming `amd` module.
-
 - amd-amd-umd
-
-  Browser runs `amd` module, which calls `amd` module consuming `umd` module.
-
 - amd-umd-umd
-
-  Browser runs `amd` module, which calls `umd` module consuming `umd` module.
-
 - amd-umd-amd
-
-  Browser runs `amd` module, which calls `umd` module consuming `amd` module.
-
-- unbundled-umd-umd-umd
-
-  Browser runs `umd` module, which calls `umd` module consuming `umd` module.
-
-- unbundled-umd-umd-amd
-
-  Browser runs `umd` module, which calls `umd` module consuming `amd` module.
-
-- unbundled-umd-amd-amd
-
-  Browser runs `umd` module, which calls `amd` module consuming `amd` module.
-
-- unbundled-umd-amd-umd
-
-  Browser runs `umd` module, which calls `amd` module consuming `umd` module.
-
-### Bundled by webpack
-
-- bundled-umd-umd-umd
-
-  Browser runs `umd` module, which was bundled with `umd` module consuming `umd` module.
-
-- bundled-umd-umd-amd
-
-  Browser runs `umd` module, which was bundled with `umd` module consuming `amd` module.
-
-- bundled-umd-amd-amd
-
-  Browser runs `umd` module, which was bundled with `amd` module consuming `amd` module.
-
-- bundled-umd-amd-umd
-
-  Browser runs `umd` module, which was bundled with `amd` module consuming `umd` module.
+- umd-umd-umd
+- umd-umd-amd
+- umd-amd-amd
+- umd-amd-umd
 
 ## Usage
 
+To run examples, you need to build JavaScript modules and to start a HTTP server.
+
 ```bash
+$ # build amd-amd-amd pattern
+$ ./tasks.sh amd-amd-amd
+...
+$ # build umd-umd-umd pattern
+$ ./tasks.sh umd-umd-umd
+...
+$ # start the HTTP server
 $ ./tasks.sh start
 start test server [18865]
 Serving HTTP on 0.0.0.0 port 8080 ...
+
+$ # you can access examples
+$ # open http://localhost:8080/
+
+$ # stop the HTTP server
 $ ./tasks.sh stop
 stopping test server [18865]
-
-$ ./tasks.sh amd-amd-amd
-$ ./tasks.sh unbundled-umd-umd-umd
-$ ./tasks.sh bundled-umd-umd-umd
 ```
 
 ## Contribution
