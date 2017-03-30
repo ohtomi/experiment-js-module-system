@@ -9,7 +9,7 @@
     "lint": "eslint src/",
     "server": "webpack-dev-server",
     "test": "run-s compile test:prep test:run",
-    "test:prep": "cp dist/*.js ../public/js/umd/consuming-umd/",
+    "test:prep": "cp dist/*.js ../public/js/umd-consuming-umd/",
     "test:run": "cross-env NODE_ENV=test ava --verbose",
     "watch": "run-p watch:src watch:test",
     "watch:src": "chokidar 'src/**/*.js' -c 'run-s compile'",

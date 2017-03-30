@@ -1,35 +1,35 @@
 #!/bin/bash
 
 amd-bootstrapping-amd-amd() {
-  cp ./amd-bootstrapping-amd-amd/src/*.js ./public/js/amd/bootstrapping-amd-amd/
+  cp ./amd-bootstrapping-amd-amd/src/*.js ./public/js/amd-bootstrapping-amd-amd/
 }
 
 amd-bootstrapping-amd-umd() {
-  cp ./amd-bootstrapping-amd-umd/src/*.js ./public/js/amd/bootstrapping-amd-umd/
+  cp ./amd-bootstrapping-amd-umd/src/*.js ./public/js/amd-bootstrapping-amd-umd/
 }
 
 amd-bootstrapping-umd-amd() {
-  cp ./amd-bootstrapping-umd-amd/src/*.js ./public/js/amd/bootstrapping-umd-amd/
+  cp ./amd-bootstrapping-umd-amd/src/*.js ./public/js/amd-bootstrapping-umd-amd/
 }
 
 amd-bootstrapping-umd-umd() {
-  cp ./amd-bootstrapping-umd-umd/src/*.js ./public/js/amd/bootstrapping-umd-umd/
+  cp ./amd-bootstrapping-umd-umd/src/*.js ./public/js/amd-bootstrapping-umd-umd/
 }
 
 amd-consuming-amd() {
-  cp ./amd-consuming-amd/src/*.js ./public/js/amd/consuming-amd/
+  cp ./amd-consuming-amd/src/*.js ./public/js/amd-consuming-amd/
 }
 
 amd-consuming-umd() {
-  cp ./amd-consuming-umd/src/*.js ./public/js/amd/consuming-umd/
+  cp ./amd-consuming-umd/src/*.js ./public/js/amd-consuming-umd/
 }
 
 amd-providing-to-amd() {
-  cp ./amd-providing-to-amd/src/*.js ./public/js/amd/providing-to-amd/
+  cp ./amd-providing-to-amd/src/*.js ./public/js/amd-providing-to-amd/
 }
 
 amd-providing-to-umd() {
-  cp ./amd-providing-to-umd/src/*.js ./public/js/amd/providing-to-umd/
+  cp ./amd-providing-to-umd/src/*.js ./public/js/amd-providing-to-umd/
 }
 
 
@@ -37,56 +37,56 @@ umd-bootstrapping-amd-amd() {
   cd ./umd-bootstrapping-amd-amd
   npm run compile
   cd ..
-  cp ./umd-bootstrapping-amd-amd/dist/*.js ./public/js/umd/bootstrapping-amd-amd/
+  cp ./umd-bootstrapping-amd-amd/dist/*.js ./public/js/umd-bootstrapping-amd-amd/
 }
 
 umd-bootstrapping-amd-umd() {
   cd ./umd-bootstrapping-amd-umd
   npm run compile
   cd ..
-  cp ./umd-bootstrapping-amd-umd/dist/*.js ./public/js/umd/bootstrapping-amd-umd/
+  cp ./umd-bootstrapping-amd-umd/dist/*.js ./public/js/umd-bootstrapping-amd-umd/
 }
 
 umd-bootstrapping-umd-amd() {
   cd ./umd-bootstrapping-umd-amd
   npm run compile
   cd ..
-  cp ./umd-bootstrapping-umd-amd/dist/*.js ./public/js/umd/bootstrapping-umd-amd/
+  cp ./umd-bootstrapping-umd-amd/dist/*.js ./public/js/umd-bootstrapping-umd-amd/
 }
 
 umd-bootstrapping-umd-umd() {
   cd ./umd-bootstrapping-umd-umd
   npm run compile
   cd ..
-  cp ./umd-bootstrapping-umd-umd/dist/*.js ./public/js/umd/bootstrapping-umd-umd/
+  cp ./umd-bootstrapping-umd-umd/dist/*.js ./public/js/umd-bootstrapping-umd-umd/
 }
 
 umd-consuming-amd() {
   cd ./umd-consuming-amd
   npm run compile
   cd ..
-  cp ./umd-consuming-amd/dist/*.js ./public/js/umd/consuming-amd/
+  cp ./umd-consuming-amd/dist/*.js ./public/js/umd-consuming-amd/
 }
 
 umd-consuming-umd() {
   cd ./umd-consuming-umd
   npm run compile
   cd ..
-  cp ./umd-consuming-umd/dist/*.js ./public/js/umd/consuming-umd/
+  cp ./umd-consuming-umd/dist/*.js ./public/js/umd-consuming-umd/
 }
 
 umd-providing-to-amd() {
   cd ./umd-providing-to-amd
   npm run compile
   cd ..
-  cp ./umd-providing-to-amd/dist/*.js ./public/js/umd/providing-to-amd/
+  cp ./umd-providing-to-amd/dist/*.js ./public/js/umd-providing-to-amd/
 }
 
 umd-providing-to-umd() {
   cd ./umd-providing-to-umd
   npm run compile
   cd ..
-  cp ./umd-providing-to-umd/dist/*.js ./public/js/umd/providing-to-umd/
+  cp ./umd-providing-to-umd/dist/*.js ./public/js/umd-providing-to-umd/
 }
 
 

@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname + '/dist'),
     filename: 'bundle.js',
-    library: 'umd/consuming-amd/bundle',
+    library: 'umd-consuming-amd/bundle',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -18,11 +18,11 @@ module.exports = {
     }]
   },
   externals: {
-    'amd-providing-to-umd': 'amd/providing-to-umd/main'
+    'amd-providing-to-umd': 'amd-providing-to-umd/main'
   },
   devServer: {
     contentBase: path.resolve(__dirname + '/../public'),
-    publicPath: '/js/umd/consuming-amd/',
+    publicPath: '/js/umd-consuming-amd/',
     watchContentBase: true
   },
   plugins: [

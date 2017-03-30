@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname + '/dist'),
     filename: 'bundle.js',
-    library: 'umd/bootstrapping-umd-umd/bundle',
+    library: 'umd-bootstrapping-umd-umd/bundle',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -17,7 +17,7 @@ module.exports = {
     }]
   },
   externals: {
-    'umd-consuming-umd': 'umd/consuming-umd/bundle'
+    'umd-consuming-umd': 'umd-consuming-umd/bundle'
   },
   devServer: {
     contentBase: path.resolve(__dirname + '/../../public'),

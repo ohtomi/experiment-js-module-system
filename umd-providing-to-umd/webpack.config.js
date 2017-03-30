@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname + '/dist'),
     filename: 'bundle.js',
-    library: 'umd/providing-to-umd/bundle',
+    library: 'umd-providing-to-umd/bundle',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -19,7 +19,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname + '/../public'),
-    publicPath: '/js/umd/providing-to-umd/',
+    publicPath: '/js/umd-providing-to-umd/',
     watchContentBase: true
   },
   plugins: [
