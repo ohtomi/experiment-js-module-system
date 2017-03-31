@@ -17,6 +17,8 @@ module.exports = {
     }]
   },
   externals: {
+    'react': 'react',
+    'react-dom': 'react-dom',
     'umd-consuming-umd': 'umd-consuming-umd/bundle'
   },
   devServer: {

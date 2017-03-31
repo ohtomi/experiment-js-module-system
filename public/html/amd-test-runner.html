@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>experiment of JavaScript module system</title>
+    <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <div id="amd-umd-amd-main"></div>
+    <div id="amd-umd-umd-main"></div>
+    <script>
+      var require = {
+        baseUrl: '/js',
+        urlArgs: 'bust=' + (new Date()).getTime(),
+        shim: {
+          'mocha': {
+            init: function() {
+              this.mocha.setup({
+                ui: 'tdd'
+              });
+              return this.mocha;
+            }
+          }
+        }
+      };
+    </script>
+    <script src="/js/require.js"></script>
+    <script>
+      require(['mocha',
+          'amd-bootstrapping-umd-amd/main.test',
+          'amd-bootstrapping-umd-umd/main.test'
+          ], function(mocha) {
+        mocha.run();
+      })
+    </script>
+  </body>
+</html>

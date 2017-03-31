@@ -1,13 +1,28 @@
 // @flow
 
+import React from 'react';
+import ReactDOM from 'react-dom';
 import moment from 'moment';
 import umd from 'umd-providing-to-umd';
 
-console.log('\t\t>> umd-consuming-umd');
+console.log('\t>> umd-consuming-umd');
 
-export default function(message: string): string {
-  let label = moment().format("YYYY-MM-DD");
-  return umd('<ucu label="' + label + '">' + message + '<ucu>');
+type UmdConsumingUmdProps = {
+  message: string
 };
 
-console.log('\t\t<< umd-consuming-umd');
+export default class UmdConsumingUmd extends React.Component {
+
+  props: UmdConsumingUmdProps;
+
+  render() {
+    let label = moment().format("YYYY-MM-DD");
+    return (
+      <pre>
+        {'umd-providing-to-umd returns ' + umd(this.props.message) + ' at ' + label}
+      </pre>
+    )
+  }
+}
+
+console.log('\t<< umd-consuming-umd');

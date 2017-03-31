@@ -1,3 +1,7 @@
 *.js
 
 !require.js
+!mocha.js
+!chai.js
+!react.js
+!react-dom.js

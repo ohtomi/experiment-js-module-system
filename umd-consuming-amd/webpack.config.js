@@ -18,6 +18,8 @@ module.exports = {
     }]
   },
   externals: {
+    'react': 'react',
+    'react-dom': 'react-dom',
     'amd-providing-to-umd': 'amd-providing-to-umd/main'
   },
   devServer: {

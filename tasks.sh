@@ -10,10 +10,12 @@ amd-bootstrapping-amd-umd() {
 
 amd-bootstrapping-umd-amd() {
   cp ./amd-bootstrapping-umd-amd/src/*.js ./public/js/amd-bootstrapping-umd-amd/
+  cp ./amd-bootstrapping-umd-amd/test/*.js ./public/js/amd-bootstrapping-umd-amd/
 }
 
 amd-bootstrapping-umd-umd() {
   cp ./amd-bootstrapping-umd-umd/src/*.js ./public/js/amd-bootstrapping-umd-umd/
+  cp ./amd-bootstrapping-umd-umd/test/*.js ./public/js/amd-bootstrapping-umd-umd/
 }
 
 amd-consuming-amd() {

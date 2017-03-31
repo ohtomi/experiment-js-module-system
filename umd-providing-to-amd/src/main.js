@@ -2,11 +2,11 @@
 
 import moment from 'moment';
 
-console.log('\t\t\t>> umd-providing-to-amd');
+console.log('\t\t>> umd-providing-to-amd');
 
 export default function(message: string): string {
   let label = moment().format("YYYY-MM-DD");
-  return '<upa label="' + label + '">' + message + '<upa>';
+  return '[umd-providing-to-amd=]' + label + ', message=' + message + ']';
 };
 
-console.log('\t\t\t<< umd-providing-to-amd');
+console.log('\t\t<< umd-providing-to-amd');

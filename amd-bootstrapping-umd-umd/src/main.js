@@ -1,9 +1,12 @@
 console.log('>> amd-umd-umd');
 
-define('amd-bootstrapping-umd-umd/main', ['umd-consuming-umd/bundle'], function(umd) {
-  return function() {
+define('amd-bootstrapping-umd-umd/main', ['react', 'react-dom', 'umd-consuming-umd/bundle'], function(React, ReactDOM, umd) {
+  return function(selector) {
     console.log('>> calling umd-consuming-umd...');
-    console.log(umd.default('amd-umd-umd'));
+    ReactDOM.render(
+      React.createElement(umd.default, { message: 'amd-umd-umd'}),
+      document.getElementById(selector)
+    );
     console.log('<< done umd-consuming-umd !')
   };
 });

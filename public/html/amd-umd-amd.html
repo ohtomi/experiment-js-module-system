@@ -4,13 +4,14 @@
   </head>
   <body>
     <h3>sample for amd-umd-amd</h3>
+    <div id="root"></div>
     <script>
       var require = { baseUrl: '/js', urlArgs: 'bust=' + (new Date()).getTime() };
     </script>
     <script src="/js/require.js"></script>
     <script>
       require(['amd-bootstrapping-umd-amd/main'], function(amd) {
-        amd();
+        amd('root');
       })
     </script>
   </body>

@@ -4,13 +4,14 @@
   </head>
   <body>
     <h3>sample for umd-umd-umd</h3>
+    <div id="root"></div>
     <script>
       var require = { baseUrl: '/js', urlArgs: 'bust=' + (new Date()).getTime() };
     </script>
     <script src="/js/require.js"></script>
     <script>
       require(['umd-bootstrapping-umd-umd/bundle'], function(umd) {
-        umd.default();
+        umd.default('root');
       })
     </script>
   </body>
