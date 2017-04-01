@@ -1,9 +1,9 @@
-console.log('\t\t\t>> amd-consuming-umd dep');
+console.log('\t\t>> amd-consuming-umd dep');
 
 define('amd-consuming-umd/dep', [], function() {
   return function(message) {
-    return '<acu-dep>' + message + '</acu-dep>'
+    return '[amd-consuming-umd/dep message=' + message + ']';
   }
 });
 
-console.log('\t\t\t<< amd-consuming-umd dep');
+console.log('\t\t<< amd-consuming-umd dep');

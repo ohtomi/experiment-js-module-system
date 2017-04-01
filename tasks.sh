@@ -2,10 +2,12 @@
 
 amd-bootstrapping-amd-amd() {
   cp ./amd-bootstrapping-amd-amd/src/*.js ./public/js/amd-bootstrapping-amd-amd/
+  cp ./amd-bootstrapping-amd-amd/test/*.js ./public/js/amd-bootstrapping-amd-amd/
 }
 
 amd-bootstrapping-amd-umd() {
   cp ./amd-bootstrapping-amd-umd/src/*.js ./public/js/amd-bootstrapping-amd-umd/
+  cp ./amd-bootstrapping-amd-umd/test/*.js ./public/js/amd-bootstrapping-amd-umd/
 }
 
 amd-bootstrapping-umd-amd() {
@@ -20,18 +22,22 @@ amd-bootstrapping-umd-umd() {
 
 amd-consuming-amd() {
   cp ./amd-consuming-amd/src/*.js ./public/js/amd-consuming-amd/
+  cp ./amd-consuming-amd/test/*.js ./public/js/amd-consuming-amd/
 }
 
 amd-consuming-umd() {
   cp ./amd-consuming-umd/src/*.js ./public/js/amd-consuming-umd/
+  cp ./amd-consuming-umd/test/*.js ./public/js/amd-consuming-umd/
 }
 
 amd-providing-to-amd() {
   cp ./amd-providing-to-amd/src/*.js ./public/js/amd-providing-to-amd/
+  cp ./amd-providing-to-amd/test/*.js ./public/js/amd-providing-to-amd/
 }
 
 amd-providing-to-umd() {
   cp ./amd-providing-to-umd/src/*.js ./public/js/amd-providing-to-umd/
+  cp ./amd-providing-to-umd/test/*.js ./public/js/amd-providing-to-umd/
 }
 
 

@@ -2,7 +2,7 @@ console.log('\t\t>> amd-consuming-amd dep');
 
 define('amd-consuming-amd/dep', [], function() {
   return function(message) {
-    return '<aca-dep>' + message + '</aca-dep>'
+    return '[amd-consuming-amd/dep message=' + message + ']';
   }
 });
 

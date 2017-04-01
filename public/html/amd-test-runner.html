@@ -7,8 +7,10 @@
   </head>
   <body>
     <div id="mocha"></div>
-    <div id="amd-umd-amd-main"></div>
-    <div id="amd-umd-umd-main"></div>
+    <div id="amd-bootstrapping-amd-amd-main"></div>
+    <div id="amd-bootstrapping-amd-umd-main"></div>
+    <div id="amd-bootstrapping-umd-amd-main"></div>
+    <div id="amd-bootstrapping-umd-umd-main"></div>
     <script>
       var require = {
         baseUrl: '/js',
@@ -28,8 +30,14 @@
     <script src="/js/require.js"></script>
     <script>
       require(['mocha',
+          'amd-bootstrapping-amd-amd/main.test',
+          'amd-bootstrapping-amd-umd/main.test',
           'amd-bootstrapping-umd-amd/main.test',
-          'amd-bootstrapping-umd-umd/main.test'
+          'amd-bootstrapping-umd-umd/main.test',
+          'amd-consuming-amd/main.test',
+          'amd-consuming-umd/main.test',
+          'amd-providing-to-amd/main.test',
+          'amd-providing-to-umd/main.test'
           ], function(mocha) {
         mocha.run();
       })

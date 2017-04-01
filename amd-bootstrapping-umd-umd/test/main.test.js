@@ -2,8 +2,8 @@ define('amd-bootstrapping-umd-umd/main.test', ['chai', 'amd-bootstrapping-umd-um
 
   suite('amd-bootstrapping-umd-umd/main.test', function() {
     test('-', function() {
-      amd('amd-umd-umd-main');
-      var ui = document.getElementById('amd-umd-umd-main');
+      amd('amd-bootstrapping-umd-umd-main');
+      var ui = document.getElementById('amd-bootstrapping-umd-umd-main');
       if (!ui) {
         chai.assert.fail();
         return;
