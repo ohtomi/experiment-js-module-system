@@ -8,7 +8,7 @@ define('amd-bootstrapping-umd-umd/main', ['react', 'react-dom', 'umd-consuming-u
       document.getElementById(selector)
     );
     console.log('<< done umd-consuming-umd !')
-  };
+  }
 });
 
 console.log('<< amd-umd-umd');
