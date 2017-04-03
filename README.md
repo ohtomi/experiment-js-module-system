@@ -40,6 +40,40 @@ $ ./tasks.sh stop
 stopping test server [18865]
 ```
 
+## Unit testing
+
+### Test AMD module with Mocha and Chai
+
+```bash
+$ ./tasks.sh start
+...
+$ open http://localhost:8080/html/amd-test-runner.html
+```
+
+### Test AMD module with Karma and Mocha, Chai
+
+```bash
+$ ./tasks.sh prep-test-for-amd
+...
+$ cd amd-providing-to-amd
+$ $(npm bin)/karma start
+...
+```
+
+### Test UMD module with webpack
+
+```bash
+$ ./tasks.sh prep-test-for-umd
+...
+$ cd umd-providing-to-umd
+$ npm run flow
+...
+$ npm run lint
+...
+$ npm run test
+...
+```
+
 ## Contribution
 
 1. Fork it!

@@ -98,6 +98,37 @@ umd-providing-to-umd() {
 }
 
 
+_prep-test-for-amd() {
+  cd "$1"
+  npm install karma mocha chai requirejs karma-mocha karma-chai karma-requirejs karma-safari-launcher
+  ln -fs ../public
+  cd ..
+}
+
+prep-test-for-amd() {
+  _prep-test-for-amd amd-bootstrapping-amd-amd
+  _prep-test-for-amd amd-bootstrapping-amd-umd
+  _prep-test-for-amd amd-bootstrapping-umd-amd
+  _prep-test-for-amd amd-bootstrapping-umd-umd
+  _prep-test-for-amd amd-consuming-amd
+  _prep-test-for-amd amd-consuming-umd
+  _prep-test-for-amd amd-providing-to-amd
+  _prep-test-for-amd amd-providing-to-umd
+}
+
+_prep-test-for-umd() {
+  cd "$1/umd_modules"
+  ln -fs "../../$2"
+  cd ../..
+}
+
+prep-test-for-umd() {
+  _prep-test-for-umd umd-bootstrapping-umd-amd umd-consuming-amd
+  _prep-test-for-umd umd-bootstrapping-umd-umd umd-consuming-umd
+  _prep-test-for-umd umd-consuming-umd umd-providing-to-umd
+}
+
+
 case "$1" in
   "start")
     cd ./public
@@ -166,12 +197,20 @@ case "$1" in
     umd-bootstrapping-amd-umd
     ;;
 
+  "prep-test-for-amd")
+    prep-test-for-amd
+    ;;
+
+  "prep-test-for-umd")
+    prep-test-for-umd
+    ;;
+
   *)
     ;;
 esac
 
 
 _tasks_sh() {
-  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd umd-umd-umd umd-umd-amd umd-amd-amd umd-amd-umd" ${COMP_WORDS[COMP_CWORD]} ) )
+  COMPREPLY=( $(compgen -W "start stop amd-amd-amd amd-amd-umd amd-umd-umd amd-umd-amd umd-umd-umd umd-umd-amd umd-amd-amd umd-amd-umd prep-test-for-amd prep-test-for-umd" ${COMP_WORDS[COMP_CWORD]} ) )
 }
 complete -F _tasks_sh ./tasks.sh
