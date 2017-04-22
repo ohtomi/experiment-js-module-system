@@ -1,6 +1,6 @@
 # experiment-js-module-system
 
-These examples show JavaScript module system with RequireJS and webpack.
+These examples show JavaScript module system with `RequireJS` and `webpack`.
 
 ## Examples
 
@@ -81,6 +81,10 @@ $ npm run test
 1. Commit your changes: git commit -am 'Add some feature'
 1. Push to the branch: git push origin my-new-feature
 1. Submit a pull request :D
+
+## License
+
+MIT
 
 ## Author
 
